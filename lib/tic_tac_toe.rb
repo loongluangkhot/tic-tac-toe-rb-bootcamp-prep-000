@@ -104,17 +104,14 @@ end
 # end
 
 def play(board)
-  while over?(board)
-    # end game msg
-    if won?(board)
-      
-      
-      puts "Congratulations #{winner(board)}"
-    else
-      puts "Cat's Game!"
-    end
-  else
+  until over?(board)
     turn(board)
-    # play(board)
+  end
+  
+  # end game msg
+  if won?(board)
+    puts "Congratulations #{winner(board)}"
+  else
+    puts "Cat's Game!"
   end
 end
